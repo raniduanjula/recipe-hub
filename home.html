@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Hub - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #333;
+            padding: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0;
+        }
+        
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px 40px;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            background: #f5576c;
+        }
+        
+        .content {
+            padding: 60px 40px;
+        }
+        
+        .welcome {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .welcome h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        
+        .welcome p {
+            color: #666;
+            font-size: 1.2em;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .category-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            padding: 40px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .category-card h3 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .category-card p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .category-card.appetizers {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+        }
+        
+        .category-card.desserts {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍳 Recipe Hub</h1>
+            <p>Discover, Share, and Enjoy Amazing Recipes</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="appetizer.html">Appetizers</a></li>
+                <li><a href="desserts.html">Desserts</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <div class="welcome">
+                <h2>Welcome to Recipe Hub!</h2>
+                <p>
+                    Explore our collection of delicious recipes from appetizers to desserts. 
+                    Whether you're looking for a quick snack or planning a full meal, 
+                    we have something for everyone. Start your culinary journey today!
+                </p>
+            </div>
+            
+            <div class="categories">
+                <div class="category-card appetizers" onclick="location.href='appetizers.html'">
+                    <h3>🥗 Appetizers</h3>
+                    <p>Start your meal with delightful starters and finger foods</p>
+                </div>
+                
+                <div class="category-card desserts" onclick="location.href='desserts.html'">
+                    <h3>🍰 Desserts</h3>
+                    <p>Sweet treats to end your meal on a perfect note</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2024 Recipe Hub. All rights reserved. | Created for COSC 32133 Lab 02</p>
+        </footer>
+    </div>
+</body>
+</html>
