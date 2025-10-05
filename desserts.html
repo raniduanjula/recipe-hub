@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desserts - Recipe Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background: #333;
+            padding: 0;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        nav ul li {
+            margin: 0;
+        }
+        
+        nav ul li a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 20px 40px;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+        
+        nav ul li a:hover {
+            background: #30cfd0;
+        }
+        
+        nav ul li a.active {
+            background: #30cfd0;
+        }
+        
+        .content {
+            padding: 60px 40px;
+        }
+        
+        .page-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .page-title h2 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+        
+        .page-title p {
+            color: #666;
+            font-size: 1.2em;
+        }
+        
+        .recipe-card {
+            background: #f9f9f9;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .recipe-card h3 {
+            color: #30cfd0;
+            font-size: 2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #30cfd0;
+        }
+        
+        .recipe-section {
+            margin-bottom: 30px;
+        }
+        
+        .recipe-section h4 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .recipe-section h4::before {
+            content: '●';
+            color: #30cfd0;
+            margin-right: 10px;
+            font-size: 0.8em;
+        }
+        
+        .ingredients-list, .steps-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .ingredients-list li {
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #30cfd0;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .steps-list {
+            counter-reset: step-counter;
+        }
+        
+        .steps-list li {
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            background: white;
+            border-radius: 8px;
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.6;
+            position: relative;
+            padding-left: 70px;
+        }
+        
+        .steps-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #30cfd0;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        footer p {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍰 Desserts</h1>
+            <p>Sweet Treats to Complete Your Meal</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="appetizer.html">Appetizers</a></li>
+                <li><a href="desserts.html" class="active">Desserts</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            <div class="page-title">
+                <h2>Our Dessert Collection</h2>
+                <p>Indulge in these delightful sweet creations</p>
+            </div>
+            
+            <!-- Recipe 1: Chocolate Lava Cake -->
+            <div class="recipe-card">
+                <h3>🍫 Chocolate Lava Cake</h3>
+                
+                <div class="recipe-section">
+                    <h4>Ingredients</h4>
+                    <ul class="ingredients-list">
+                        <li>1/2 cup (1 stick) unsalted butter, plus extra for greasing</li>
+                        <li>6 ounces dark chocolate (70% cocoa), chopped</li>
+                        <li>2 large eggs</li>
+                        <li>2 large egg yolks</li>
+                        <li>1/4 cup granulated sugar</li>
+                        <li>2 tablespoons all-purpose flour</li>
+                        <li>1 teaspoon vanilla extract</li>
+                        <li>Pinch of salt</li>
+                        <li>Powdered sugar for dusting</li>
+                        <li>Vanilla ice cream for serving (optional)</li>
+                    </ul>
+                </div>
+                
+                <div class="recipe-section">
+                    <h4>Preparation Steps</h4>
+                    <ol class="steps-list">
+                        <li>Preheat your oven to 425°F (220°C). Generously butter four 6-ounce ramekins and dust them with cocoa powder or flour.</li>
+                        <li>In a microwave-safe bowl, melt the butter and chopped chocolate together in 30-second intervals, stirring between each interval until smooth. Set aside to cool slightly.</li>
+                        <li>In a separate bowl, whisk together the eggs, egg yolks, and sugar until the mixture becomes thick and pale yellow, about 2-3 minutes.</li>
+                        <li>Gently fold the melted chocolate mixture into the egg mixture. Add vanilla extract and a pinch of salt.</li>
+                        <li>Sift the flour over the chocolate mixture and fold gently until just combined. Do not overmix.</li>
+                        <li>Divide the batter evenly among the prepared ramekins, filling them about 3/4 full.</li>
+                        <li>Place the ramekins on a baking sheet and bake for 12-14 minutes. The edges should be firm but the center should still be soft.</li>
+                        <li>Remove from oven and let stand for 1 minute. Run a knife around the edges and invert onto serving plates. Dust with powdered sugar and serve immediately with ice cream.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <!-- Recipe 2: Tiramisu -->
+            <div class="recipe-card">
+                <h3>☕ Classic Tiramisu</h3>
+                
+                <div class="recipe-section">
+                    <h4>Ingredients</h4>
+                    <ul class="ingredients-list">
+                        <li>6 large egg yolks</li>
+                        <li>3/4 cup granulated sugar</li>
+                        <li>1 1/3 cups heavy cream</li>
+                        <li>16 ounces mascarpone cheese, room temperature</li>
+                        <li>2 cups strong brewed espresso or coffee, cooled</li>
+                        <li>3 tablespoons coffee liqueur (Kahlua) - optional</li>
+                        <li>40-48 ladyfinger cookies (savoiardi)</li>
+                        <li>Unsweetened cocoa powder for dusting</li>
+                        <li>Dark chocolate shavings for garnish</li>
+                        <li>1 teaspoon vanilla extract</li>
+                    </ul>
+                </div>
+                
+                <div class="recipe-section">
+                    <h4>Preparation Steps</h4>
+                    <ol class="steps-list">
+                        <li>In a heatproof bowl, whisk together egg yolks and sugar. Place over a pot of simmering water (double boiler) and whisk constantly for 8-10 minutes until thick and pale. Remove from heat and let cool.</li>
+                        <li>In a separate bowl, beat the mascarpone cheese until smooth and creamy. Gradually fold the cooled egg mixture into the mascarpone until well combined. Add vanilla extract.</li>
+                        <li>In another bowl, whip the heavy cream to stiff peaks. Gently fold the whipped cream into the mascarpone mixture in three additions until smooth and fluffy.</li>
+                        <li>Combine the cooled espresso with coffee liqueur (if using) in a shallow dish.</li>
+                        <li>Quickly dip each ladyfinger into the coffee mixture for about 2-3 seconds per side. Don't oversoak or they'll become mushy.</li>
+                        <li>Arrange a layer of soaked ladyfingers in the bottom of a 9x13 inch dish, breaking them to fit if necessary.</li>
+                        <li>Spread half of the mascarpone cream mixture over the ladyfingers, smoothing it into an even layer.</li>
+                        <li>Repeat with another layer of coffee-dipped ladyfingers and top with the remaining cream mixture. Smooth the top.</li>
+                        <li>Cover with plastic wrap and refrigerate for at least 6 hours or overnight to allow flavors to meld.</li>
+                        <li>Before serving, dust generously with cocoa powder and garnish with chocolate shavings. Cut into squares and serve chilled.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; 2024 Recipe Hub. All rights reserved. | Created for COSC 32133 Lab 02</p>
+        </footer>
+    </div>
+</body>
+</html>
